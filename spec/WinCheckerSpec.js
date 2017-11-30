@@ -34,4 +34,14 @@ describe("winChecker", function() {
     var gArr = ['o', 'x', 'o', 'x', 'o', 'o', 'o', 'x', 'o'];
     expect(winChecker.columnChecker(gArr)).toEqual("Congratulations! o wins");
   });
+
+  it('indicates if there is a downwards diagonal win', function() {
+    var gArr = ['o', 'x', 'x', 'x', 'o', 'o', 'o', 'x', 'o'];
+    expect(winChecker.diagonalChecker(gArr)).toEqual("Congratulations! o wins");
+  });
+
+  it('indicates if there is an upwards diagonal win', function() {
+    var gArr = ['o', 'o', 'x', 'x', 'x', 'o', 'x', 'x', 'o'];
+    expect(winChecker.diagonalChecker(gArr)).toEqual("Congratulations! x wins");
+  });
 });
